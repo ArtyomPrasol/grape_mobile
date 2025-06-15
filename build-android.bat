@@ -18,7 +18,7 @@ if errorlevel 1 (
 )
 
 echo Building release APK...
-call .\gradlew assembleRelease
+call .\gradlew assembleRelease --no-daemon --stacktrace --info
 if errorlevel 1 (
     echo Error during gradle build
     pause

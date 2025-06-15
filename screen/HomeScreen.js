@@ -6,13 +6,15 @@ import EventList from "../components/EventList";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Colors, Layout } from "../style/theme";
 import config from '../config';
+import { useIsFocused } from '@react-navigation/native';
 
 const HomeScreen = () => {
     const [data, setData] = useState([]);
     const [refreshing, setRefreshing] = useState(false);
     const insets = useSafeAreaInsets();
     const headerHeight = useHeaderHeight();
-
+    const isFocused = useIsFocused();
+    
     const fetchData = async () => {
         try {
             const userId = await AsyncStorage.getItem("user_id");
@@ -36,8 +38,10 @@ const HomeScreen = () => {
     };
 
     useEffect(() => {
+        if (isFocused) {
         fetchData();
-    }, []);
+        }
+    }, [isFocused]);
 
     const onRefresh = useCallback(async () => {
         setRefreshing(true);

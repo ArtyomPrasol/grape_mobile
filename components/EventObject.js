@@ -18,7 +18,7 @@ const EventItem = ({code_name, date_create, time_get, class_set, class_comment})
             <Text>Дата создания: {date_create}</Text>
             <Text>Дата обработки: {time_get}</Text>
             <Text>Диагноз: {class_set}</Text>
-            <Text>Пользователь сказал: {class_comment}</Text>
+            <Text>Комментарий: {class_comment}</Text>
         </TouchableOpacity>
     );
 }

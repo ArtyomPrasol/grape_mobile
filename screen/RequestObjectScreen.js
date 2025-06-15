@@ -76,7 +76,7 @@ const EventScreen = ({ route }) => {
                 <Text style={styles.detailText}>Дата создания: {date_create}</Text>
                 <Text style={styles.detailText}>Дата обработки: {time_get}</Text>
                 <Text style={styles.detailText}>Диагноз: {class_set}</Text>
-                <Text style={styles.detailText}>Пользователь сказал: {class_comment}</Text>
+                <Text style={styles.detailText}>Комментарий: {class_comment}</Text>
             </View>
 
             {loading ? (
